@@ -1,0 +1,21 @@
+<ion-view view-title="{{show.Title}}">
+    <ion-content>
+        <h1 class="title center">{{show.Title}}</h1>
+        <div class="center">
+            <img ng-src="{{show.Poster!='N/A' ? show.Poster : 'http://www.classicposters.com/images/nopicture.gif'}}"/>
+        </div>
+        <div class="row">
+            <div class="col">Genre</div>
+            <div class="col">{{show.Genre}}</div>
+        </div>
+        <div class="row">
+            <div class="col">Date de sortie</div>
+            <div class="col">{{show.Released}}</div>
+        </div>
+        <div class="row">
+            <div class="col">Acteurs</div>
+            <div class="col">{{show.Actors}}</div>
+        </div>
+        <p>{{show.Plot!='N/A' ? show.Plot : 'Pas de résumé disponible pour cette série'}}</p>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,62 @@
+<ion-view view-title="Search">
+  <ion-content>
+    <h1>Search toto</h1>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" ng-model="search.string" ng-enter="controller.getShow()" placeholder="Rechercher le nom d'une série">
+        <button on-tap="controller.getShow()" type="button" class="button">Search</button>
+      </label>
+    </div>
+
+    <div class="row">
+      <div class="item card" style="background-image: url({{show.Poster!='N/A' ? show.Poster : 'http://www.classicposters.com/images/nopicture.gif'}})" ng-repeat="show in shows"  ui-sref="show({ showId: show.imdbID })">
+        <div class="text">
+          <h2>{{shows[$index].Title}}</h2>
+          <p>{{shows[$index].Year}}</p>
+        </div>
+        
+      </div>
+      
+    </div>
+
+    <!--
+    <div class="row" ng-repeat="show in shows" ng-if="$index % 4 == 0">
+      <div class="col item card" width="25%" style="background-image: url({{shows[$index].Poster!='N/A' ? shows[$index].Poster : 'http://www.classicposters.com/images/nopicture.gif'}})" ng-if="$index < shows.length">
+
+       
+          <h2>{{shows[$index].Title}}</h2>
+          <p>{{shows[$index].Year}}</p>
+        
+      </div>
+      
+      <div class="col item card" width="25%" style="background-image: url({{shows[$index + 1].Poster!='N/A' ? shows[$index + 1].Poster : 'http://www.classicposters.com/images/nopicture.gif'}})" ng-if="$index + 1 < shows.length">
+
+          <h2>{{shows[$index +1].Title}}</h2>
+          <p>{{shows[$index +1].Year}}</p>
+        
+      </div>
+
+      <div class="col item card" width="25%" style="background-image: url({{shows[$index + 2].Poster!='N/A' ? shows[$index + 2].Poster : 'http://www.classicposters.com/images/nopicture.gif'}})" ng-if="$index + 2 < shows.length">
+
+          <h2>{{shows[$index + 2].Title}}</h2>
+          <p>{{shows[$index + 2].Year}}</p>
+        
+      </div>
+
+      <div class="col item card" width="25%" style="background-image: url({{shows[$index + 3].Poster!='N/A' ? shows[$index + 3].Poster : 'http://www.classicposters.com/images/nopicture.gif'}})" ng-if="$index + 3 < shows.length">
+
+          <h2>{{shows[$index + 3].Title}}</h2>
+          <p>{{shows[$index + 3].Year}}</p>
+        
+      </div>
+    </div>
+    
+    <ion-item  class="item-thumbnail-left" ng-repeat="show in shows" ui-sref="show({ showId: show.imdbID })">
+      <img ng-src="{{show.Poster!='N/A' ? show.Poster : 'http://www.classicposters.com/images/nopicture.gif'}}" >
+      <h2>{{show.Title}}</h2>
+      <p>{{show.Year}}</p>
+    </ion-item>
+    -->
+  </ion-content>
+</ion-view>
